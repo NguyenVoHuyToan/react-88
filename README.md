@@ -68,3 +68,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+----------------------------------------------------------------------------------------------------------------
+cách viết một function ngắn gọn trong ES6: - const newFunction = () => {} "Arrow function"
+                                            - function course() {} "function component"
+
+
+
+$ Khái niệm của React: 
+Component -> Là thành phần riêng lẽ của một hệ thống hoặc một dự án. Có thể dễ dàng xử lý những thành phần riêng lẽ này một cách độc lập, không làm ảnh hưởng đến các thành phần khác. Một component có thể được dụng nhiều lần trong một dự án...
+
++ JSX là gì?: - Javascript XML. Tạo ra các đoạn HTML một cách tường mình, nhanh chóng. Có thể chèn các giá trị JS vào bên trong để tạo ra trang web có nội dung.
+            - fragment <> </> : bọc các jsx vào 1 parent, bản chất jsx là một Obj, 1 function không thể return 2 Obj.
+            - Hiển thị Dinamic content với jsx
+            - 
+    Rule of JSX: - Không thể return ra 2 Obj
+                 
+
++ Props -> chia làm 2 loại: React Element và React Component
++ React Element: - Sử dụng Props giống như sử dụng Attribute của HTML
+               - 2 Props thường sử dụng là class -> className; for -> htmlFor
+               - Phải tuân theo quy ước có sẵn
+
++ React Component: - Sử dụng props giống như đối số cho Function
+                 - Tự do đặt tên:
+                    - Đặt tên theo camelCase
+                    - *Có thể có dấu gạch ngang
++ Chú ý: - Prop "key" là prop đặc biệt: chỉ dùng cho mục đích đưa React Element/ React Component vào trong 1 Array.
+       - Props cơ bản là đối số của Component =>> Props có thể là bất cứ kiểu dữ liệu gì
+       - Sử dụng Destructuring
+
++ CallBack: Là khi chúng ta định nghĩa một function, sau đó truyền qua đối số của một function khác, sau đó được gọi lại trong hàm nhận đối số đó, thì sẽ gọi là callback.
+    - phải kiểm tra có đúng là function hay ko bằng cách: if(value) === function, sau đó mới dùng callback
+    
