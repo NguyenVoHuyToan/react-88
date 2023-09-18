@@ -100,4 +100,18 @@ Component -> Là thành phần riêng lẽ của một hệ thống hoặ
 
 + CallBack: Là khi chúng ta định nghĩa một function, sau đó truyền qua đối số của một function khác, sau đó được gọi lại trong hàm nhận đối số đó, thì sẽ gọi là callback.
     - phải kiểm tra có đúng là function hay ko bằng cách: if(value) === function, sau đó mới dùng callback
+
++Hooks là gì?
+    - Là method, là hàm được cung cấp bởi thư viện ReactJS. mỗi hàm sẽ có mỗi tính năng và trường hợp cụ thể để áp dụng.
+    - Các Hooks cơ bản gồm: - useState
+                            - useEffect
+                            - useLayoutEffect
+                            - useRef
+                            - useCallback
+                            - useMemo
+                            - useReducer
+                            - useContext
+                            - useImperativeHandle
+                            - useDebugValue
+    -
     

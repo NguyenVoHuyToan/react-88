@@ -1,20 +1,11 @@
 import React from 'react'
 import {styled} from "styled-components";// Gọi thư viện
 
-const Content = () => {
-  return (
-    <div className="content">
-      Content
-      </div>
-
-  )
-}
-
 // export const SuperBox = styled.div`
-//   display: flex;
-//   background-color: aqua;
-//   justify-content: center;
-//   gap: 100px;
+//     background-color: aqua;
+//     display: flex;
+//     justify-content: center;
+//     gap: 20px;
 // `;
 
 // export const BoxOne = styled.div`
@@ -41,15 +32,25 @@ const Content = () => {
 //   background-color: yellow;
 // `;
 
-export const content = ({title, text, button,}) => {
-  return (
-    <div>
-      {title}
-      {text}
-      {button}
-      </div>
-  )
+// export const content = ({content1, content2, content3}) => {
+//   return (
+//     <SuperBox>
+//       <BoxOne>{content1}</BoxOne>
+//       <BoxTwo>{content2}</BoxTwo>
+//       <BoxThree>{content3}</BoxThree>
+//     </SuperBox>
+//   )
     
    
+// }
+// export default content
+
+function Content(props) {
+  return (
+    <div>
+      <p>{props.title}</p>
+    </div>
+  )
 }
-export default content
+
+export default Content
