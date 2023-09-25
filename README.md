@@ -149,3 +149,34 @@ Component -> Là thành phần riêng lẽ của một hệ thống hoặ
         - Component được re-render sau khi 'setState'
         - Initial State chỉ dùng cho lần đầu
         - Set State với Callback?
+
+
+
+
+
+method Array: 
+        - Filter: trả ra mảng mới, các phần tử trong mảng thỏa điều kiện nào đó
+        vd: const fileterdNum = num.filter(item,index) => item > 4
+
+        - Map: trả ra mảng mới, các phần tử thay đổi dựa trên điều kiện
+        vd: const mapNum = num.map((item, index) => item *2)
+
+        -List: 
+        vd: {arr.map(item,index) => {
+            return <h1>{item}</h1>
+        }}
+
+        {array.map((item, index) => (
+            <h1>{item}</h1>
+        ))}
+        *Key là một props đặc biệt của React. Cần key để React phân biệt các item với nhau và ngược lại trong một list rendering (là một UI được render ra từ một mảng có cấu trúc giống nhau chỉ khác nhau content*
+        *Key chỉ dùng cho mảng và dùng cho thẻ cha. Không nên dùng cho thẻ con. trong 1 component không được cho key trùng nhau*
+RENDER THEO ĐIỀU KIỆN.
+            const [value, setValue] = useState()
+        -Cấu trúc với ternary operator: Toán tử ba ngôi
+        *{value
+            ? "điều kiện 1"
+            : "điều kiện 2"
+            }
+        -Inline với toán tử &&
+        cú pháp: {!value && "nội dung cần hiển thị"}

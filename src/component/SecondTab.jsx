@@ -5,7 +5,6 @@ import ComponentTest from './ComponentTest';
 
 
 
-
 function SeconTab() {
   const [info, setInfo ] = useState({
     nameproduct: "",
@@ -13,16 +12,17 @@ function SeconTab() {
     date: "",
   })
   const {nameproduct, amount, date} = info
-  console.log(info)
+  // console.log(info)
   const onHandleChange = (key,event) => {
     const value = event.target.value
     setInfo({...info, [key]: value})
   }
   const addClick = () => {
-    //  document.getElementById("datetime").innerHTML= (info.date)
-    //  document.getElementById("name").innerHTML= (info.nameproduct)
-    //  document.getElementById("amount").innerHTML= (info.amount)
-    setInfo({...info})
+    return(
+      <div className='Productname'>
+        <p className='name'>{info.nameproduct}</p>
+      </div>
+    )
   }
   const clearClick = ( ) => {
     

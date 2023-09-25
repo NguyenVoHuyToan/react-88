@@ -9,9 +9,9 @@ import ComponentTest from './component/ComponentTest';
 
 
 function App() {
-  const [change, setChange] = useState()
+  const [change, setChange] = useState(false)
   const HandleClick = () => {
-    setChange(!change)//Mounted && Unmounted (lắp vào, gỡ ra)
+    setChange((prev) => !prev)
     document.getElementById("firsttab").style.display = "none"
   }
   return (
