@@ -72,7 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ----------------------------------------------------------------------------------------------------------------
 cách viết một function ngắn gọn trong ES6: - const newFunction = () => {} "Arrow function"
                                             - function course() {} "function component"
-
+kiểu dữ liệu của OBJ là kiểu dữ liệu tham chiếu (referent type)
 
 
 $ Khái niệm của React: 
@@ -113,5 +113,39 @@ Component -> Là thành phần riêng lẽ của một hệ thống hoặ
                             - useContext
                             - useImperativeHandle
                             - useDebugValue
-    -
+    - Role:
+        - Hook chỉ dùng cho function component
+        - Component đơn giản và trở nên dễ hiểu
+            - Không bị chia logic ra như methods trong lifecycle của Class Component
+            - Không cần sử dụng "this"
+        -Sử dụng Hooks khi nào?
+            - Dự án mới => Hooks
+            - Dự án cũ
+                - Component mới => Function Component + Hooks
+                - Component cũ =>  Giữ nguyên, có thời gian tối ưu sau
+            -Logic nghiệp vụ cần sử dụng các tính chất của OOP => Class component
+        - Người mới nên bắt đầu với Function hay Class component? => Function Component
+        - Có kết hợp sử dụng Function và Class Component được không? => Được
+        
++useState(Trạng thái của dữ liệu):
+    - Khi nào dùng useState: 
+        * Khi muốn dữ liệu thay đổi, thì giao diện tự động cập nhật (render lại theo dữ liệu)
+    - cú pháp: 
+        const [state, setState] = useState[initState]
     
+     +trong đó:- useState: Hàm cần sử dụng
+             - initState: Đối số đầu vào của Hàm, là giá trị khởi tạo
+             - state: phần tử được return, chính là giá trị innitState. * state == initState *
+             - setState: Là hàm được sử dụng để setup lại cho state. Gọi hàm setState(), truyền vào dữ liệu cần thay đổi => state sẽ nhận dữ liệu đó.
+    - Cập nhật state với Obj
+        - dùng spread operate để giữ nguyên giá trị Obj ban đầu và cập nhật thêm giá trị mới
+        - setInfo({
+            ...info,
+            * thêm giá trị cần cập nhật*
+        })
+        - JSON.stringify để chuyển dữ liệu thành dạng string
+
+    - Lưu ý:
+        - Component được re-render sau khi 'setState'
+        - Initial State chỉ dùng cho lần đầu
+        - Set State với Callback?

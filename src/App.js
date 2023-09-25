@@ -1,27 +1,55 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import InputComponent, { Title } from './component/InputComponent';
-import Content from './component/Content';
-import ComponentTitle from './component/ComponentTitle';
+import FirstTab from './component/FirstTab';
+import SeconTab from './component/SecondTab';
+import MainTable from './component/MainTable';
+import ComponentTest from './component/ComponentTest';
 
 
 
 
 function App() {
+  const [change, setChange] = useState()
+  const HandleClick = () => {
+    setChange(!change)//Mounted && Unmounted (lắp vào, gỡ ra)
+    document.getElementById("firsttab").style.display = "none"
+  }
   return (
   <div style={{
-    margin:"40px"
+    display: "flex",
+    justifyContent: "center",
   }}>
-    <h3>Sign up for an account</h3>
-    <Content title = "Signing up for an account is free and easy. Fill out the form below to get started. Javascript is requied to continue"/>
-    <InputComponent title = "Username" inputType = "text" width = "80%"></InputComponent>
-    <InputComponent title = "Password ( 4 characters minimum )" inputType = "text"></InputComponent>
-    <InputComponent title = "Password Confirm" inputType = "text"></InputComponent>
-    <InputComponent title = "Email" inputType = "text"></InputComponent>
-    <Content title = "By clicking the Sign up button below, I certify that I have read and agree to the TMDB terms of use and privacy policy"/>
-    <ComponentTitle/>
+    <div>
+      
+      <div id = "greybox" style={{
+      border: "1px solid black",
+      borderRadius: "10px",
+      padding: "10px",
+      backgroundColor: "black",
+      color: "white",
+    }}>
+        <div id="firsttab" style={{
+      width: "600px",
+      height: "100px",
+      borderRadius: "10px",
+      backgroundColor: "#6A95CA",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}>
+      <button onClick={HandleClick}  style={{
+        borderRadius: "20px",
+        backgroundColor: "violet",
+        color: "white",
+        width: "200px",
+        height: "40px",
+      }}>ADD NEW EXPENSE</button>
+      </div>
+        {change && <SeconTab/>}
+        <MainTable/>
+      </div>
+    </div>
   </div>
-  
   );
 }
 

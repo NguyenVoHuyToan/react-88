@@ -1,5 +1,4 @@
-import React from 'react'
-import {styled} from "styled-components";// Gọi thư viện
+import React, { useState } from 'react';
 
 // export const SuperBox = styled.div`
 //     background-color: aqua;
@@ -45,12 +44,33 @@ import {styled} from "styled-components";// Gọi thư viện
 // }
 // export default content
 
-function Content(props) {
+
+function FirstTab(props) {
   return (
-    <div>
-      <p>{props.title}</p>
+    <div style={{
+      display: "flex",
+      justifyContent: "center"
+    }}>
+      <div style={{
+      width: "600px",
+      height: "100px",
+      borderRadius: "10px",
+      backgroundColor: "#6A95CA",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}>
+      <button  style={{
+        borderRadius: "20px",
+        backgroundColor: "violet",
+        color: "white",
+        width: "200px",
+        height: "40px",
+      }}>ADD NEW EXPENSE</button>
+    </div>
     </div>
   )
 }
 
-export default Content
+export default FirstTab
+
