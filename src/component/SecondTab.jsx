@@ -18,12 +18,13 @@ function SeconTab() {
     setInfo({...info, [key]: value})
   }
   const addClick = () => {
-    return(
-      <div className='Productname'>
-        <p className='name'>{info.nameproduct}</p>
-      </div>
-    )
+      info.map((item) => {
+       let nameItem = item.nameproduct;
+        let amoutItem = item.amount;
+       let dateItem = item.date
+      })
   }
+  console.log(nameItem)
   const clearClick = ( ) => {
     
 
