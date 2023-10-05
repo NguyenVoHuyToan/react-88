@@ -6,29 +6,19 @@ import ComponentTest from './ComponentTest';
 
 
 function SeconTab() {
-  const [info, setInfo ] = useState({
-    nameproduct: "",
-    amount: "",
-    date: "",
-  })
-  const {nameproduct, amount, date} = info
-  // console.log(info)
-  const onHandleChange = (key,event) => {
-    const value = event.target.value
-    setInfo({...info, [key]: value})
-  }
+  const [name, setName ] = useState('')
+  const [amount, setAmount] = useState('')
+  const [date, setDate] = useState('')
+  const [data, setData] = useState('')
   const addClick = () => {
-      info.map((item) => {
-       let nameItem = item.nameproduct;
-        let amoutItem = item.amount;
-       let dateItem = item.date
-      })
+    setData(prev => {
+      const newData = [...prev, {name, amount, date}]
+      console.log(newData)
+    })
   }
-  console.log(nameItem)
-  const clearClick = ( ) => {
-    
+   const cancleClick = () => {
 
-  }
+   }
   return (
   <div style={{
     display: "flex",
@@ -67,9 +57,9 @@ function SeconTab() {
       height: "100px",
       
      }}>
-      <input onChange={e => onHandleChange("nameproduct",e)} type="text" placeholder='Enter Name here...'/>
-      <input onChange={e => onHandleChange("amount", e)} type='text' placeholder='Enter Amout here...'/>
-      <input onChange={e => onHandleChange("date", e)} type='date'/>
+      <input onChange={e => setName(e.target.value) } type="text" placeholder='Enter Name here...'/>
+      <input onChange={e => setAmount(e.target.value) } type='text' placeholder='Enter Amout here...'/>
+      <input onChange={e => setDate(e.target.value)} type='date'/>
      </div>
       <div>
       <div style={{
@@ -84,7 +74,7 @@ function SeconTab() {
         backgroundColor: "violet",
         color: "white"
       }}>ADD</button>
-      <button onClick={clearClick} style={{
+      <button onClick={cancleClick} style={{
         borderRadius: "5px",
         backgroundColor: "whitegrey",
         color: "grey"
