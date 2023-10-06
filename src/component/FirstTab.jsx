@@ -47,28 +47,7 @@ import React, { useState } from 'react';
 
 function FirstTab(props) {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center"
-    }}>
-      <div style={{
-      width: "600px",
-      height: "100px",
-      borderRadius: "10px",
-      backgroundColor: "#6A95CA",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}>
-      <button  style={{
-        borderRadius: "20px",
-        backgroundColor: "violet",
-        color: "white",
-        width: "200px",
-        height: "40px",
-      }}>ADD NEW EXPENSE</button>
-    </div>
-    </div>
+    <></>
   )
 }
 

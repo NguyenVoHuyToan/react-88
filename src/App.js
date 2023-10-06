@@ -7,22 +7,21 @@ import SeconTab from './component/SecondTab';
 
 
 function App() {
-  const [change, setChange] = useState(false)
+  const [change, setChange] = useState(true)
   const HandleClick = () => {
     setChange(!change)
     
   }
   return (
   <> 
-    <div className='container'>    
+    {change ? (<div className='container'>    
       <div className='block'>
         <div className='cover-button'>
       <button className='button-click' onClick={HandleClick} >ADD NEW EXPENSE</button>
         </div>
-       {change && <SeconTab/>}
       </div>
-    </div>
-      {/* <MainTable/> */}
+    </div>) : (!change && <SeconTab/> )}
+    <MainTable/>
   </>
   );
 }

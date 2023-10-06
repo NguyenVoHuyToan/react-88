@@ -9,80 +9,51 @@ function SeconTab() {
   const [name, setName ] = useState('')
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
-  const [data, setData] = useState('')
+  const [data, setData] = useState([])
+ 
   const addClick = () => {
-    setData(prev => {
-      const newData = [...prev, {name, amount, date}]
-      console.log(newData)
-    })
+    const newData = {name, amount, date}
+    setData([...data,newData])
   }
    const cancleClick = () => {
-
+      setName('')
+      setAmount('')
+      setDate('')
    }
   return (
-  <div style={{
-    display: "flex",
-    justifyContent: "center",
-  }}>
-    <div style={{
-    display: "flex",
-    gap: "50px",
-    width: "550px",
-    height: "150px",
-    padding: "20px",
-    borderRadius: "10px",
-    border: "1px solid black",
-    backgroundColor:"#6A95CA",
-  }}>
-     <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      gap: "10px",
-      width: "100px",
-      height: "120px",
-      marginTop: "-10px"
-      
-     }}>
+  <>
+  <div className='block-second'>
+    <div className='cover-name-input' >
+     <div className='name-tab' >
       <span>Name</span>
       <span>Amount</span>
       <span>Date</span>
      </div>
-     <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center", 
-      gap: "10px",
-      width: "100%",
-      height: "100px",
-      
-     }}>
-      <input onChange={e => setName(e.target.value) } type="text" placeholder='Enter Name here...'/>
-      <input onChange={e => setAmount(e.target.value) } type='text' placeholder='Enter Amout here...'/>
-      <input onChange={e => setDate(e.target.value)} type='date'/>
+     <div className='input-tab'>
+      <input value={name} onChange={e => setName(e.target.value) } type="text" />
+      <input value={amount} onChange={e => setAmount(e.target.value) } type='text'/>
+      <input value={date} onChange={e => setDate(e.target.value)} type='date'/>
      </div>
-      <div>
-      <div style={{
-      gap: "20px",
-      display: "flex",
-      justifyContent: "center",
-      marginLeft: "-200px",
-      marginTop: "120px"
-    }}>
-      <button onClick={addClick} style={{
-        borderRadius: "5px",
-        backgroundColor: "violet",
-        color: "white"
-      }}>ADD</button>
-      <button onClick={cancleClick} style={{
-        borderRadius: "5px",
-        backgroundColor: "whitegrey",
-        color: "grey"
-      }}>Cancle</button>
+     <div className='block-button'>
+      <button className='button-add' onClick={addClick}>ADD</button>
+      <button className='button-cancle' onClick={cancleClick}>Cancle</button>
     </div>
+    </div>
+  </div> 
+  <div>
+  {data.map((item,index) => {
+    return(
+    <div className='cover-show'>
+      <div className='show' key={index}>
+        <div className='show-date'>{item.date}</div>
+        <div className='show-name'>{item.name}</div>
+        <div className='show-amount'>{item.amount}</div>
       </div>
     </div>
-  </div>  
+    )
+  })}
+  </div>
+  </>  
       
   )
 }

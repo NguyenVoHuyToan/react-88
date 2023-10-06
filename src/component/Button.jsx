@@ -5,23 +5,9 @@ function ButtonHandle() {
 
   }
   return (
-    <div style={{
-      gap: "20px",
-      display: "flex",
-      justifyContent: "center",
-      marginLeft: "-200px",
-      marginTop: "120px"
-    }}>
-      <button onClick={ClickButton} style={{
-        borderRadius: "5px",
-        backgroundColor: "violet",
-        color: "white"
-      }}>ADD</button>
-      <button style={{
-        borderRadius: "5px",
-        backgroundColor: "whitegrey",
-        color: "grey"
-      }}>Cancle</button>
+    <div className='block-button'>
+      <button className='button-add' onClick={ClickButton}>ADD</button>
+      <button className='button-cancle'>Cancle</button>
     </div>
   )
 }
