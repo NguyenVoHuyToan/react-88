@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { styled } from 'styled-components';
-import ButtonHandle from './Button';
-import ComponentTest from './ComponentTest';
 
 
 

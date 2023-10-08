@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ListSpend from './ListSpend';
+import Filter from './Filter';
 
 
 function Table() {
@@ -8,13 +9,12 @@ function Table() {
     <div>
       <div className='cover-filter'>
         <div className='filter'> 
-          <span>Filter by year</span>
-          <select className='select'>
-            <option>2021</option>
-            <option>2022</option>
-            <option>2023</option>
-            <option>2024</option>
-          </select>
+          <Filter 
+          title="Filter by years"
+          one="2021"
+          two="2022"
+          three="2023"
+          four="2024"/>
         </div>
       </div>
       <div className='boxlist'>
